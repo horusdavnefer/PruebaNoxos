@@ -2,6 +2,7 @@ package com.david.pruebanoxos.db
 
 import android.app.Application
 import androidx.room.Room
+import com.david.pruebanoxos.activities.viewmodels.MainViewModel
 import com.david.pruebanoxos.db.dao.TransaccionDao
 import com.david.pruebanoxos.retrofit.api.PaymentApi
 import com.david.pruebanoxos.retrofit.api.PaymentRepository
@@ -92,8 +93,8 @@ object AppModule {
         transactionInsertUseCase: TransactionInsertUseCase,
         transactionsUseCase: TransactionsGetAllUseCase,
         transactionUpdateUseCase: TransactionUpdateUseCase
-    ): TransactionViewModel {
-        return TransactionViewModel(authorizationUseCase, annulationUseCase,
+    ): MainViewModel {
+        return MainViewModel(authorizationUseCase, annulationUseCase,
             transactionInsertUseCase, transactionsUseCase, transactionUpdateUseCase)
     }
 }
