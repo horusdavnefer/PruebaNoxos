@@ -50,7 +50,7 @@ object AppModule {
     @Singleton
     fun provideCeibaApi(): PaymentApi {
         return Retrofit.Builder()
-            .baseUrl("http://192.168.3.38:8080")
+            .baseUrl("http://127.0.0.1:50484")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(PaymentApi::class.java)
